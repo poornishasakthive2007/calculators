@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Calculator</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Background Decorative Elements -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <!-- Main Container -->
+    <main class="calculator-container">
+        <!-- Calculator Header -->
+        <header class="calculator-header">
+            <div class="header-indicator">
+                <span class="indicator-dot red"></span>
+                <span class="indicator-dot yellow"></span>
+                <span class="indicator-dot green"></span>
+            </div>
+            <h1 class="calculator-title">Calculator</h1>
+        </header>
+
+        <!-- Display Screen -->
+        <section class="calculator-display" aria-live="polite">
+            <!-- Previous operand and operator expression -->
+            <div class="previous-operand" id="previousOperand" aria-label="Previous Calculation"></div>
+            <!-- Current input / result -->
+            <div class="current-operand" id="currentOperand" aria-label="Current Value">0</div>
+        </section>
+
+        <!-- Keypad / Buttons Grid -->
+        <section class="calculator-keypad" aria-label="Calculator Keypad">
+            <!-- Row 1: Actions & Division -->
+            <button type="button" class="btn btn-action" id="btnClear" data-action="clear" title="Clear all (Escape / C)">C</button>
+            <button type="button" class="btn btn-action" id="btnDelete" data-action="delete" title="Delete last digit (Backspace)">DEL</button>
+            <button type="button" class="btn btn-action" data-action="percent" title="Percentage (%)">%</button>
+            <button type="button" class="btn btn-operator" data-operator="÷" title="Divide (/)">÷</button>
+
+            <!-- Row 2: 7, 8, 9, Multiplication -->
+            <button type="button" class="btn btn-number" data-number="7">7</button>
+            <button type="button" class="btn btn-number" data-number="8">8</button>
+            <button type="button" class="btn btn-number" data-number="9">9</button>
+            <button type="button" class="btn btn-operator" data-operator="×" title="Multiply (*)">×</button>
+
+            <!-- Row 3: 4, 5, 6, Subtraction -->
+            <button type="button" class="btn btn-number" data-number="4">4</button>
+            <button type="button" class="btn btn-number" data-number="5">5</button>
+            <button type="button" class="btn btn-number" data-number="6">6</button>
+            <button type="button" class="btn btn-operator" data-operator="−" title="Subtract (-)">−</button>
+
+            <!-- Row 4: 1, 2, 3, Addition -->
+            <button type="button" class="btn btn-number" data-number="1">1</button>
+            <button type="button" class="btn btn-number" data-number="2">2</button>
+            <button type="button" class="btn btn-number" data-number="3">3</button>
+            <button type="button" class="btn btn-operator" data-operator="+" title="Add (+)">+</button>
+
+            <!-- Row 5: Plus/Minus, 0, Decimal, Equals -->
+            <button type="button" class="btn btn-action" data-action="toggle-sign" title="Positive/Negative toggle">±</button>
+            <button type="button" class="btn btn-number" data-number="0">0</button>
+            <button type="button" class="btn btn-number" data-action="decimal" title="Decimal point (.)">.</button>
+            <button type="button" class="btn btn-equals" id="btnEquals" data-action="equals" title="Calculate result (Enter / =)">=</button>
+        </section>
+
+        <!-- Keyboard Hint -->
+        <footer class="calculator-footer">
+            <span><kbd>Keyboard Supported</kbd> (0-9, +, -, *, /, Enter, Backspace)</span>
+        </footer>
+    </main>
+
+    <!-- JavaScript Script -->
+    <script src="script.js"></script>
+</body>
+</html>
